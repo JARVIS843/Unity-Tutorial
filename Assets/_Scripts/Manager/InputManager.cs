@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -12,30 +13,19 @@ namespace UnityTutorial.Manager
         public Vector2 Look {get; private set;}
         public bool Run {get; private set;}
 
-
-
         private InputActionMap _currentMap;
         private InputAction _moveAction;
         private InputAction _lookAction;
         private InputAction _runAction;
 
-
-
-       private void Awake()
-        {
+        private void Awake() {
             HideCursor();
-            AssignReferences();
-            SubscribeKeys();
-        }
+            _currentMap = PlayerInput.currentActionMap;
+            _moveAction = _currentMap.FindAction("Move");
+            _lookAction = _currentMap.FindAction("Look");
+            _runAction  = _currentMap.FindAction("Run");
 
-        private static void HideCursor()
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
 
-        private void SubscribeKeys()
-        {
             _moveAction.performed += onMove;
             _lookAction.performed += onLook;
             _runAction.performed += onRun;
@@ -46,38 +36,30 @@ namespace UnityTutorial.Manager
             _runAction.canceled += onRun;
         }
 
-        private void AssignReferences()
-       {
-           _currentMap = PlayerInput.currentActionMap;
-           _moveAction = _currentMap.FindAction("Move");
-           _lookAction = _currentMap.FindAction("Look");
-           _runAction = _currentMap.FindAction("Run");
-       }
-
-       private void onMove(InputAction.CallbackContext context)
-       {
-           Move = context.ReadValue<Vector2>();
-       }
-
-        private void onLook(InputAction.CallbackContext context)
+        private void HideCursor()
         {
-           Look = context.ReadValue<Vector2>();
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
+        private void onMove(InputAction.CallbackContext context)
+        {
+            Move = context.ReadValue<Vector2>();
+        }
+        private void onLook(InputAction.CallbackContext context)
+        {
+            Look = context.ReadValue<Vector2>();
+        }
         private void onRun(InputAction.CallbackContext context)
         {
             Run = context.ReadValueAsButton();
         }
 
-
-
-
         private void OnEnable() {
             _currentMap.Enable();
         }
 
-        private void onDisable()
-        {
+        private void OnDisable() {
             _currentMap.Disable();
         }
         
