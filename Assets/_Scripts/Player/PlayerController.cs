@@ -114,6 +114,7 @@ namespace UnityTutorial.PlayerControl
         {
             if(!_hasAnimator) return;
             if(!_inputManager.Jump) return;
+            if(!_grounded) return;
             _animator.SetTrigger(_jumpHash);
 
             //Enable this if you want B-Hop
