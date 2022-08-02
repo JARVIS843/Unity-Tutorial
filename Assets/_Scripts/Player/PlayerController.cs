@@ -99,7 +99,8 @@ namespace UnityTutorial.PlayerControl
             var Mouse_X = _inputManager.Look.x;
             var Mouse_Y = _inputManager.Look.y;
             Camera.position = CameraRoot.position;
-
+            
+            
             _xRotation -= Mouse_Y * MouseSensitivity * Time.smoothDeltaTime;
             _xRotation = Mathf.Clamp(_xRotation, UpperLimit, BottomLimit);
 

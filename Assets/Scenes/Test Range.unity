@@ -628,7 +628,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845216545}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 409fbfae959a7e74b8418922e3968f31, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -661,7 +661,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853041094}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 409fbfae959a7e74b8418922e3968f31, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -1221,7 +1221,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172848270}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 409fbfae959a7e74b8418922e3968f31, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -1970,25 +1970,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 1167564546}
   m_IsSelectable: 1
-  m_SelectedFaces: 0700000001000000
-  m_SelectedEdges:
-  - a: 28
-    b: 29
-  - a: 30
-    b: 28
-  - a: 29
-    b: 31
-  - a: 31
-    b: 30
-  - a: 4
-    b: 5
-  - a: 6
-    b: 4
-  - a: 5
-    b: 7
-  - a: 7
-    b: 6
-  m_SelectedVertices: 1c0000001d0000001e0000001f00000004000000050000000600000007000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!4 &1172848275
 Transform:
   m_ObjectHideFlags: 0
@@ -2419,7 +2403,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117160872}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 409fbfae959a7e74b8418922e3968f31, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -3992,7 +3976,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4416926081799734646
 MonoBehaviour:
